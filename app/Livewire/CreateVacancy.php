@@ -8,6 +8,24 @@ use Livewire\Component;
 
 class CreateVacancy extends Component
 {
+    public $title;
+    public $salary;
+    public $category;
+    public $company;
+    public $deadline;
+    public $description;
+    public $image;
+
+    protected $rules = [
+        "title" => "required|string",
+        "salary" => "required|numeric",
+        "category" => "required",
+        "company" => "required",
+        "deadline" => "required",
+        "description" => "required",
+        "image" => "required",
+    ];
+
     public function render()
     {
         // consult db for salaries
