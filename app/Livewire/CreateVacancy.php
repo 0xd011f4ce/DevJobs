@@ -26,6 +26,11 @@ class CreateVacancy extends Component
         "image" => "required",
     ];
 
+    public function createVacancy()
+    {
+        $data = $this->validate();
+    }
+
     public function render()
     {
         // consult db for salaries

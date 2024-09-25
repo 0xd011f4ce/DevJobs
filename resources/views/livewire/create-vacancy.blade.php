@@ -1,4 +1,4 @@
-<form action="#" class="md:w-1/2 space-y-5">
+<form action="#" class="md:w-1/2 space-y-5" wire:submit.prevent='createVacancy'>
 
     <div>
         <x-input-label for="title" :value="__('Vacancy Title')" />
@@ -16,6 +16,7 @@
                 <option value="{{ $salary->id }}">{{ $salary->salary }}</option>
             @endforeach
         </select>
+        <x-input-error :messages="$errors->get('salary')" class="mt-2" />
     </div>
 
     <div>
@@ -27,6 +28,7 @@
                 <option value="{{ $category->id }}">{{ $category->category }}</option>
             @endforeach
         </select>
+        <x-input-error :messages="$errors->get('category')" class="mt-2" />
     </div>
 
     <div>
@@ -38,7 +40,8 @@
 
     <div>
         <x-input-label for="deadline" :value="__('Deadline')" />
-        <x-text-input id="deadline" class="block mt-1 w-full" type="date" wire:model="deadline" :value="old('deadline')" />
+        <x-text-input id="deadline" class="block mt-1 w-full" type="date" wire:model="deadline"
+            :value="old('deadline')" />
         <x-input-error :messages="$errors->get('deadline')" class="mt-2" />
     </div>
 
