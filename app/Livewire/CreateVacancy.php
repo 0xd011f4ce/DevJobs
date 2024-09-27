@@ -51,8 +51,10 @@ class CreateVacancy extends Component
         ]);
 
         // create message
+        session()->flash('message', 'The vacancy has been published successfully');
 
         // redirect to vacancies page
+        return redirect(route("vacancies.index"));
     }
 
     public function render()
