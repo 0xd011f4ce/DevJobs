@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Categories;
 use App\Models\Salaries;
+use App\Models\Vacancy;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -38,6 +39,16 @@ class CreateVacancy extends Component
         $nameImage = str_replace("public/vacancies/", "", $image);
 
         // create vacancy
+        Vacancy::create([
+            "title" => $data["title"],
+            "salary_id" => $data["salary"],
+            "category_id" => $data["category"],
+            "company" => $data["company"],
+            "deadline" => $data["deadline"],
+            "description" => $data["description"],
+            "image" => $nameImage,
+            "user_id" => auth()->user()->id(),
+        ]);
 
         // create message
 
