@@ -32,6 +32,16 @@ class CreateVacancy extends Component
     public function createVacancy()
     {
         $data = $this->validate();
+
+        // store the image
+        $image = $this->image->store("public/vacancies");
+        $nameImage = str_replace("public/vacancies/", "", $image);
+
+        // create vacancy
+
+        // create message
+
+        // redirect to vacancies page
     }
 
     public function render()
