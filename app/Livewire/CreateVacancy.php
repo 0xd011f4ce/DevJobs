@@ -47,7 +47,7 @@ class CreateVacancy extends Component
             "deadline" => $data["deadline"],
             "description" => $data["description"],
             "image" => $nameImage,
-            "user_id" => auth()->user()->id(),
+            "user_id" => auth()->user()->id,
         ]);
 
         // create message
