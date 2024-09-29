@@ -18,7 +18,7 @@
                         Candidates
                     </a>
 
-                    <a href="#"
+                    <a href="{{ route('vacancies.edit', ['vacancy' => $vacancy]) }}"
                         class="bg-blue-800 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center">
                         Edit
                     </a>
