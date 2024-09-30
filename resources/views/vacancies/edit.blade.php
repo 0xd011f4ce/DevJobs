@@ -12,7 +12,7 @@
                     <h1 class="text-2xl font-bold text-center my-10">Edit Vacancy: {{ $vacancy->title }}</h1>
 
                     <div class="md:flex md:justify-center p-5">
-
+                        <livewire:edit-vacancy />
                     </div>
 
                 </div>
